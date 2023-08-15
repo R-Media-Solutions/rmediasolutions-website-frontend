@@ -17,7 +17,8 @@
       'data' => array()
     );
     
-    public function __construct() {
+    public function __construct() 
+    {
       ini_set('display_errors', 0);
       
       if (isset($_SERVER['HTTP_ORIGIN'])) {
@@ -46,7 +47,8 @@
       echo "Client API";
     }
 
-    public function getData($URL = ""){
+    public function getData($URL = "")
+    {
       // cURL setting
       $ch   = curl_init();
       curl_setopt($ch, CURLOPT_URL, $URL);     // provide the URL to use
@@ -69,7 +71,8 @@
       return $obj;
     }
 
-    public function postData($URL = "", $arrData = array()) {
+    public function postData($URL = "", $arrData = array()) 
+    {
       // Prepare insert transaction data
       /*
       {
@@ -117,7 +120,8 @@
       );
     }
     
-    private function authorize() {
+    private function authorize() 
+    {
       return base64_encode($this->APIKey.":".$this->APISecret);
     }
 
@@ -163,7 +167,8 @@
       die();
     }
 
-    public function saveLogFile($type = "", $content = "empty") {
+    public function saveLogFile($type = "", $content = "empty") 
+    {
       $path = "log/api_log/".date('Y')."/".date('m');
       if (is_array($content)) $content = json_encode($content);
       $txt = date('H:i:s')." $type: $content";
@@ -174,7 +179,8 @@
       //echo "OK";
     }
     
-    private function request($id, $default='') {
+    private function request($id, $default='') 
+    {
       if (empty($id)) {
         return $default;
       }

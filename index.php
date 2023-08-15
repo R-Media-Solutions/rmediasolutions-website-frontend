@@ -1,12 +1,14 @@
 <?php 
   include_once('./controllers/global.php');
 
-  $arrData = getProduct();
   /*
+  $arrData = getProduct();
+  
   echo '<pre>';
   print_r($arrData);
   die();
   */
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">

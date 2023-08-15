@@ -4,10 +4,8 @@
 
   include_once('./controllers/api/client_api.php');
 
-  //$arrData = getProduct();
-  //$arrData = postProduct();
-
-  function getProduct($id = ""){
+  function getProduct($id = "")
+  {
     $URL          = "http://localhost:8080/products";
     if(!empty($id)){
       $URL        .= "/".$id;
@@ -18,7 +16,8 @@
     return $arrResult;
   }
 
-  function postProduct(){
+  function postProduct($arrData = array())
+  {
     /*
     {
         "name": "Mesin 02",
